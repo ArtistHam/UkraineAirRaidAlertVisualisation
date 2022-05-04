@@ -1,3 +1,33 @@
 .App {
-  text-align: center;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.main-container {
+  margin-left: 30%;
+  width: 70%;
+  padding: 20px 200px;
+  transition: margin-left 0.4s ease-in-out;
+}
+
+.main-container.minimized-sidebar {
+  margin-left: 0px;
+}
+
+.raid-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(217, 217, 217);
 }
