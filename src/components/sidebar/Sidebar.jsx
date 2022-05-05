@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import ArrowRight from "../../assets/icons/angle-right.svg";
 import './Sidebar.css';
@@ -8,6 +8,7 @@ const Sidebar = ({activeTab, setActiveTab, minimized, setMinimized}) => {
 
   const onSelectMenuItem = (id) => (e) => {
     setActiveTab(id);
+    setMinimized(true);
   }
 
   const onMinimize = () => {

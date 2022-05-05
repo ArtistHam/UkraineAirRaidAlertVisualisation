@@ -28,38 +28,40 @@ function App() {
   const [minimized, setMinimized] = useState(false);
 
   return (
-    <div className="App">
-      <Sidebar
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        minimized={minimized}
-        setMinimized={setMinimized}
-      />
-      <div className={`main-container ${minimized ? "minimized-sidebar" : ""}`}>
-        {(() => {
-          switch (activeTab) {
-            case 0:
-              return <ListOfAlerts />;
-            case 1:
-              return <DoughnutChart />;
-            default:
-              return null;
-          }
-        })()}
+      <div className="App">
+        <Sidebar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          minimized={minimized}
+          setMinimized={setMinimized}
+        />
+        <div
+          className={`main-container ${minimized ? "minimized-sidebar" : ""}`}
+        >
+          {(() => {
+            switch (activeTab) {
+              case 0:
+                return <ListOfAlerts />;
+              case 1:
+                return <DoughnutChart />;
+              default:
+                return null;
+            }
+          })()}
+        </div>
+        <div className="footer">
+          <span>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://t.me/Artist149"
+            >
+              Разработчик
+            </a>
+          </span>
+          <span>Последнее обновление данных: 13:13 04.05.2022</span>
+        </div>
       </div>
-      <div className="footer">
-        <span>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://t.me/Artist149"
-          >
-            Разработчик
-          </a>
-        </span>
-        <span>Последнее обновление данных: 13:13 04.05.2022</span>
-      </div>
-    </div>
   );
 }
 
